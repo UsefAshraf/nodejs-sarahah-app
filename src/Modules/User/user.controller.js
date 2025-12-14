@@ -19,6 +19,7 @@ usercontroller.get(
   authenticationMiddleware(),
   errorHandler(Profileservice.profileservice)
 );
+
 usercontroller.patch(
   "/updatepassword",
   authenticationMiddleware(),

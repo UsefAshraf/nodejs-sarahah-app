@@ -5,12 +5,14 @@ config();
 import authcontroller from "./Modules/Auth/authcontroller.js";
 import usercontroller from "./Modules/User/user.controller.js";
 import { globalErrorHandler } from "./Middleware/errorhandler.middleware.js";
+import messageController from "./Modules/Message/message.controller.js";
 
 async function startServer() {
   const app = express();
   app.use(express.json());
 app.use("/auth", authcontroller);
 app.use("/user", usercontroller);
+app.use("/message",messageController);
   const PORT = process.env.PORT || 3000;
 
   await Database_connect();
